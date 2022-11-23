@@ -1,3 +1,3 @@
 # Penelitian Sistem Informasi
- ENDETEKSI DINI PENYAKIT TIDAK MENULAR PADA POSBINDU PUSKESMAS PENJARINGAN JAKARTA UTARA BERBASIS WEBSITE
+ Pendeteksi Dini Penyakit Tidak Menular Pada Posbindu Puskesmas Penjaringan Jakarta Utara Berbasis Website
 # puskesmas
