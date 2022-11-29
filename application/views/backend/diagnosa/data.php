@@ -22,6 +22,7 @@
       <div class="card-title m-3">
         <?php  echo form_open_multipart('diagnosa/filter'); ?>
         <div class="row">
+          <?php if ($this->fungsi->user_login()->role != 1){ ?>
           <div class="col-md-3">
             <label for="kd_penyakit">Daftar Penyakit</label>
             <select class="single-select" id="kd_penyakit" name="kd_penyakit">
@@ -48,7 +49,7 @@
             <button type="submit" class="btn btn-sm btn-danger" name="Cetak"><span class="bx bx-download"></span> PDF</button>
           </div>
           <?php echo form_close(); ?>
-          <?php if ($this->fungsi->user_login()->role != 1){ ?>
+
             <div class="col-md-3 text-end">
               <br>
               <a href="<?=site_url('diagnosa/form')?>" class="btn btn-sm btn-primary"><span class="bx bx-plus"></span> Tambah</a>
@@ -69,7 +70,10 @@
                 <th>Email</th>
                 <th>Hasil Diagnosa</th>
                 <th>Tgl Diagnosa</th>
-                <th>Aksi</th>
+                <?php if ($this->fungsi->user_login()->role == 0){ ?>
+                  <th>Aksi</th>
+                <?php } ?>
+
               </tr>
             </thead>
             <tbody>
@@ -84,14 +88,16 @@
                   <td><?=$data->email?></td>
                   <td><?php foreach ($rowhasil->result() as $key => $datarelasi){ ?>
                     <?php if ($datarelasi->nama == $data->nama){ ?>
-                      <?=$datarelasi->kd_penyakit.'|'.$datarelasi->nama_penyakit?> <br>
+                      <?=$datarelasi->kd_penyakit.'|'.$datarelasi->nama_penyakit?> | <a href="<?=site_url('diagnosa/deldiagnosa/'.$data->id)?>" title="Hapus" class="badge bg-danger m-1 hapus text-light"><i class="bx bx-trash me-0"></i></a><br>
                     <?php } ?>
                   <?php } ?></td>
                   <td><?=igDate($data->tanggal)?></td>
+                  <?php if ($this->fungsi->user_login()->role == 0){ ?>
                   <td width="1%">
                     <!-- <a href="<?=site_url('diagnosa/edit/'.$data->id)?>" title="Edit" class="btn btn-sm btn-success"><i class="bx bx-edit me-0"></i></a> -->
                     <a href="<?=site_url('diagnosa/del/'.$data->nama)?>" title="Hapus" class="btn btn-sm btn-danger hapus text-white"><i class="bx bx-trash me-0"></i></a>
                   </td>
+                  <?php } ?>
                 </tr>
               <?php $no++;
             } ?>

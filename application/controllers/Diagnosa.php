@@ -15,7 +15,6 @@ class Diagnosa extends CI_Controller{
 	{
 		parent::__construct();
 		belum_login();
-		cek_admin();
 		$this->load->model(array('M_diagnosa','M_penyakit','M_user','M_gejala'));
 		//Codeigniter : Write Less Do More
 	}
@@ -40,6 +39,7 @@ class Diagnosa extends CI_Controller{
 				'subpage' => 'Data',
 				'page' => 'Diagnosa',
 				'row' => $this->M_diagnosa->get(),
+        'rowhasil' => $this->M_diagnosa->getanalisahasil(),
 				'penyakit' => $this->M_penyakit->get(),
 			);
 			$this->template->load($this->foldertemplate.'template',$this->folder.'data',$data);
@@ -49,6 +49,7 @@ class Diagnosa extends CI_Controller{
 				'subpage' => 'Data',
 				'page' => 'Diagnosa',
 				'row' => $this->M_diagnosa->get(),
+        'rowhasil' => $this->M_diagnosa->getanalisahasil(),
 				'penyakit' => $this->M_penyakit->get(),
 			);
       $this->load->view($this->folder.'lap_diagnosa', $data);
@@ -154,9 +155,18 @@ class Diagnosa extends CI_Controller{
 			redirect('diagnosa','refresh');
 		}
 	}
+  public function deldiagnosa($id)
+	{
+		$this->M_diagnosa->deldiagnosa($id);
+		if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('success', 'Data berhasil dihapus');
+		}
+		redirect('diagnosa');
+	}
 
 	public function del($id)
 	{
+    cek_admin();
 		$this->M_diagnosa->del($id);
 		if ($this->db->affected_rows() > 0) {
 			$this->session->set_flashdata('success', 'Data berhasil dihapus');

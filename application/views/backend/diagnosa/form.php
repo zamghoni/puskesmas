@@ -30,6 +30,7 @@
             echo form_open_multipart('diagnosa/process',$attributes); ?>
             <input type="hidden" name="id" value="<?=$row->id?>">
             <div class="row g-3">
+              <?php if ($this->fungsi->user_login()->role != 1){ ?>
               <div class="col-md-6">
                 <label for="id_user" class="form-label">Nama Pasien *</label>
                 <select class="single-select" id="id_user" name="id_user" required>
@@ -40,6 +41,13 @@
                 <?php } ?>
                 </select>
               </div>
+            <?php } else { ?>
+              <div class="col-md-6">
+                <label for="id_user" class="form-label">Nama Pasien *</label>
+                <input type="hidden"name="id_user" value="<?=$this->fungsi->user_login()->id?>">
+                <input type="text" class="form-control"  value="<?=$this->fungsi->user_login()->nama_lengkap?>" readonly>
+              </div>
+            <?php } ?>
               <div class="col-md-6">
                 <label for="jk" class="form-label">Jenis Kelamin *</label>
                 <select class="form-select" id="jk" name="jk" required>

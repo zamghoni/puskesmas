@@ -75,6 +75,7 @@
 					</a>
 				</li>
 				<li class="dropdown-divider mb-0 mt-2"></li>
+				<?php if ($this->fungsi->user_login()->role != 1){ ?>
 				<li class="<?=activate_menu('penyakit')?>">
 					<a href="<?=site_url('penyakit')?>">
 						<div class="parent-icon"><i class="bx bx-plus-medical"></i>
@@ -97,8 +98,9 @@
 					</a>
 				</li>
 				<li class="dropdown-divider mb-0 mt-2"></li>
-				<li>
-					<a href="<?=site_url('diagnosa/form')?>">
+			<?php } ?>
+				<li class="<?=activate_menu('tambah_diagnosa')?>">
+					<a href="<?=site_url('tambah_diagnosa')?>">
 						<div class="parent-icon"><i class="bx bx-plus"></i>
 						</div>
 						<div class="menu-title">Tambah Diagnosa</div>

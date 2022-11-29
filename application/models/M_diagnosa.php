@@ -12,11 +12,16 @@ class M_diagnosa extends CI_Model{
   function get($id = null)
   {
     $kd_penyakit = $this->input->post('kd_penyakit');
+    $nama_pasien = $this->fungsi->user_login()->nama_lengkap;
+    $pasien = $this->fungsi->user_login()->role != 0;
     $jk = $this->input->post('jk');
     $this->db->from('analisa_hasil');
     $this->db->join('penyakit', 'penyakit.kd_penyakit = analisa_hasil.kd_penyakit', 'left');
     $this->db->group_by('nama');
     $this->db->order_by('id','DESC');
+    if ($pasien) {
+    $this->db->where('nama',$nama_pasien);
+    }
     if ($kd_penyakit) {
     $this->db->where('analisa_hasil.kd_penyakit',$kd_penyakit);
     }
@@ -141,6 +146,12 @@ class M_diagnosa extends CI_Model{
 	{
     $this->db->where('id_user', $id);
     $this->db->delete('tmp_pasien');
+	}
+
+  public function deldiagnosa($id)
+	{
+    $this->db->where('id', $id);
+    $this->db->delete('analisa_hasil');
 	}
 
   public function del($id)
