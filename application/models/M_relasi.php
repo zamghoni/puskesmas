@@ -16,6 +16,7 @@ class M_relasi extends CI_Model{
     $this->db->from('relasi');
     $this->db->join('gejala', 'gejala.kd_gejala = relasi.kd_gejala', 'left');
     $this->db->join('penyakit', 'penyakit.kd_penyakit = relasi.kd_penyakit', 'left');
+    $this->db->group_by('penyakit.kd_penyakit');
     if ($kd_penyakit) {
     $this->db->where('penyakit.kd_penyakit',$kd_penyakit);
     }
@@ -25,6 +26,15 @@ class M_relasi extends CI_Model{
     if ($id != null) {
       $this->db->where('id_relasi',$id);
     }
+    $query = $this->db->get();
+    return $query;
+  }
+
+  function getrelasi($id = null)
+  {
+    $this->db->from('relasi');
+    $this->db->join('gejala', 'gejala.kd_gejala = relasi.kd_gejala', 'left');
+    $this->db->join('penyakit', 'penyakit.kd_penyakit = relasi.kd_penyakit', 'left');
     $query = $this->db->get();
     return $query;
   }

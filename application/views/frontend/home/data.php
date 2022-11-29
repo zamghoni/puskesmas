@@ -11,7 +11,7 @@
         <div class="carousel-item active" style="background-image: url(<?=base_url()?>assets/frontend/img/slide/slide-1.jpg)">
           <div class="carousel-container">
             <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Puskesmas Penjaringan</span></h2>
+              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Puskesmas Cilincing</span></h2>
               <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
               <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
             </div>
@@ -64,22 +64,22 @@
         <div class="col-lg-4">
           <div class="icon-box">
             <i class="bi bi-card-checklist"></i>
-            <h3><a href="">Lorem Ipsum</a></h3>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <h3><a href="">Ramah</a></h3>
+            <p>Pelayanan yang dilakukan dengan wajah ceria, wajar, dan dengan etika yang baik serta tidak menyinggung perasaan.</p>
           </div>
         </div>
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="icon-box">
             <i class="bi bi-bar-chart"></i>
-            <h3><a href="">Dolor Sitema</a></h3>
-            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <h3><a href="">Cepat</a></h3>
+            <p>Pelayanan sebaik mungkin dan cepat kepada para pelanggan, sehingga pelanggan menjadi merasa puas.</p>
           </div>
         </div>
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="icon-box">
             <i class="bi bi-binoculars"></i>
-            <h3><a href="">Sed ut perspiciatis</a></h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <h3><a href="">Nyaman</a></h3>
+            <p>Pelayanan yang menghadirkan rasa senang, tanpa merasa dirugikan</p>
           </div>
         </div>
       </div>
@@ -96,20 +96,12 @@
           <img src="<?=base_url()?>assets/frontend/img/about.jpg" class="img-fluid rounded shadow" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 content">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3>SELAMAT DATANG DI PUSKESMAS KECAMATAN CILINCING</h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            Puskesmas kecamatan Cilincing yang terletak dijalan Sungai Landak No.26 Puskesmas Kecamatan di wilayah kecamatan Cilincing yang membawahi 10 Puskesmas kelurahan yang berada di wilayah kecamatan Cilincing.
           </p>
-          <ul>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-          </ul>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            Seluruh Puskesmas tersebut memberikan pelayanan kesehatan dasar kepada masyarakat dilingkungan wilayah Kec. Cilincing.  Dalam melaksanakan pelayanan kesehatan di Puskesmas  Kecamatan Cilincing dan Puskesmas Kelurahan di wilayah Kecamatan Cilincing tenaga kesehatan yang melaksanakan pelayanan tersebut merupakan faktor utama yang memegang peranan, karena itu dituntut memiliki kemampuan dan keahlian yang profesional
           </p>
         </div>
       </div>
@@ -129,7 +121,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.</p>
             </div>
-          </div>  
+          </div>
           <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box rounded shadow">
               <div class="icon"><i class="bx bx-world"></i></div>

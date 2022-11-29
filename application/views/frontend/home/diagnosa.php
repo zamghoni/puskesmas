@@ -14,40 +14,37 @@
   <section id="team" class="team" style="background: white url(<?=base_url()?>assets/frontend/img/footer-bg.png) no-repeat right top;">
     <div class="p-4">
       <div class="row">
-        <?php  echo form_open_multipart('home/filter'); ?>
-        <div class="container align-center">
-          <div class="card col-6">
+        <?php $attributes = array('onsubmit' => 'return tambah(this)');
+        echo form_open_multipart('home/process',$attributes); ?>
+        <div class="container d-flex justify-content-center">
+          <div class="card col-md-6">
             <div class="card-header">
               <h3>Registrasi Pasien</h3>
             </div>
             <div class="card-body">
+              <?php $this->view('frontend/message')?>
               <div class="info-box mb-4 rounded">
-                <form action="#" method="post" role="form" class="php-email-form rounded">
-                  <label for="nama" class="form-label">Nama Lengkap</label>
-                  <input type="text" name="nama" class="form-control" required oninvalid="this.setCustomValidity('Masukkan Nama Lengkap anda')" oninput="setCustomValidity('')"  placeholder="Nama Lengkap Anda">
-                  <p></p>
-                  <label for="jk" class="form-label">Jenis Kelamin</label>
-                  <select class="form-control" name="jk">
-                    <option value="">- Pilih -</option>
-                    <option value="Wanita">Wanita</option>
-                    <option value="Laki-laki">Laki-laki</option>
-                  </select>
-                  <p></p>
-                  <label for="umur" class="form-label">Umur</label>
-                  <input type="number" name="umur" class="form-control">
-                  <p></p>
-                  <label for="alamat" class="form-label">Alamat</label>
-                  <input type="text" name="alamat" class="form-control">
-                  <p></p>
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" name="email" class="form-control">
-                  <p></p>
-                  <button type="submit" class="btn btn-success" >Simpan</button>
-                </form>
+                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                <input type="text" name="nama_lengkap" class="form-control" required oninvalid="this.setCustomValidity('Masukkan Nama Lengkap anda')" oninput="setCustomValidity('')"  placeholder="Nama Lengkap Anda">
+                <p></p>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required oninvalid="this.setCustomValidity('Masukkan Email anda')" oninput="setCustomValidity('')"  placeholder="example@mail.com">
+                <p></p>
+                <label for="no_hp" class="form-label">No. HP</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">+62</span>
+                  <input type="number" name="no_hp" class="form-control" placeholder="8979xxxxxx" aria-label="hp_hp" aria-describedby="basic-addon1" required oninvalid="this.setCustomValidity('Masukkan No. HP anda')" oninput="setCustomValidity('')" >
+                </div>
+                <p></p>
+                <div class="text-center">
+                  <button type="submit" name="SaveRegs" class="btn btn-primary"><i class='bx bx-save'></i> Simpan</button>
+                </div>
+                <?php echo form_close(); ?>
+
               </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section><!-- End Team Section -->
-</main><!-- End #main -->
+    </section><!-- End Team Section -->
+  </main><!-- End #main -->

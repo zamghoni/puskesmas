@@ -28,22 +28,35 @@
             <hr>
             <?php $attributes = array('onsubmit' => 'return tambah(this)');
             echo form_open_multipart('diagnosa/process',$attributes); ?>
+            <input type="hidden" name="id" value="<?=$row->id?>">
             <div class="row g-3">
               <div class="col-md-12">
-                <label for="kd_diagnosa" class="form-label">Kode diagnosa *</label>
-                <input type="text" name="kd_diagnosa" class="form-control" id="kd_diagnosa"
-                required oninvalid="this.setCustomValidity('Masukkan Kode diagnosa')" oninput="setCustomValidity('')"  placeholder="Masukan kode diagnosa"
-                <?php if ($subpage != "Tambah"){ ?>
-                  value="<?=$row->kd_diagnosa?>" readonly
-                <?php }else{ ?>
-                  autofocus
+                <label for="nama" class="form-label">Nama Pasien *</label>
+                <select class="single-select" id="nama" name="nama" required>
+                  <?php $nama = $this->input->post('nama') ? $this->input->post('nama') : $row->nama ?>
+                  <option value="">- Daftar Pasien -</option>
+                  <?php foreach ($user->result() as $key => $data) { ?>
+                  <option value="<?=$data->nama_lengkap?>" <?=$data->nama_lengkap == $nama ? 'selected' : null?>> <?=$data->nama_lengkap?> </option>
                 <?php } ?>
-                  >
+                </select>
               </div>
               <div class="col-md-12">
-                <label for="nama_diagnosa" class="form-label">Nama diagnosa *</label>
-                <input type="text" name="nama_diagnosa" class="form-control" id="nama_diagnosa"
-                value="<?=$row->nama_diagnosa?>" required oninvalid="this.setCustomValidity('Masukkan Nama diagnosa')" oninput="setCustomValidity('')"  placeholder="Masukan nama diagnosa">
+                <label for="jk" class="form-label">Jenis Kemain *</label>
+                <select class="form-select" id="jk" name="jk" required>
+                  <?php $jk = $this->input->post('jk') ? $this->input->post('jk') : $row->jk ?>
+                  <option value="">- Pilih -</option>
+                  <option value="Wanita" <?=$jk == 'Wanita' ? 'selected' : null?>> Wanita </option>
+                  <option value="Laki-laki" <?=$jk == 'Laki-laki' ? 'selected' : null?>> Laki-laki </option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label for="umur" class="form-label">Umur *</label>
+                <input type="text" class="form-control" name="umur" value="<?=$row->umur?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="25" required>
+              </div>
+              <div class="col-md-12">
+                <label for="alamat" class="form-label">Alamat *</label>
+                <input type="text" name="alamat" class="form-control" id="alamat"
+                 value="<?=$row->alamat?>" required oninvalid="this.setCustomValidity('Masukkan alamat anda')" oninput="setCustomValidity('')"  placeholder="Masukan alamat">
               </div>
               <div class="col-12 text-center">
                 <a href="<?=site_url('diagnosa')?>" class="btn btn-outline-secondary"><span class="bx bx-arrow-back"></span> Kembali</a>

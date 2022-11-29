@@ -14,14 +14,14 @@ class Home extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    $this->load->model(array('M_penyakit'));
+    $this->load->model(array('M_penyakit','M_user'));
     //Codeigniter : Write Less Do More
   }
 
   function index()
   {
     $data = array(
-			'subpage' => 'Puskesmas Penjaringan',
+			'subpage' => 'Puskesmas Cilincing',
 			'page' => 'Home',
 		);
 		$this->template->load($this->foldertemplate.'template',$this->folder.'data',$data);
@@ -30,7 +30,7 @@ class Home extends CI_Controller{
   function info_penyakit()
   {
     $data = array(
-			'subpage' => 'Puskesmas Penjaringan',
+			'subpage' => 'Puskesmas Cilincing',
 			'page' => 'Info Penyakit',
       'row' => $this->M_penyakit->get(),
 		);
@@ -72,7 +72,7 @@ class Home extends CI_Controller{
 
     //panggil function get_album_list yang ada pada mmodel mahasiswa_model.
     $data = array(
-      'subpage' => 'Puskesmas Penjaringan',
+      'subpage' => 'Puskesmas Cilincing',
       'page' => 'Foto',
       'row' => $this->M_album->get_album_list($config["per_page"], $data['page']),
     );
@@ -119,7 +119,7 @@ class Home extends CI_Controller{
 
     //panggil function get_acara_list yang ada pada mmodel mahasiswa_model.
     $data = array(
-      'subpage' => 'Puskesmas Penjaringan',
+      'subpage' => 'Puskesmas Cilincing',
       'page' => 'Agenda',
       'row' => $this->M_acara->get_acara_list($config["per_page"], $data['page']),
     );
@@ -134,7 +134,7 @@ class Home extends CI_Controller{
   function statistik()
   {
     $data = array(
-			'subpage' => 'Puskesmas Penjaringan',
+			'subpage' => 'Puskesmas Cilincing',
 			'page' => 'Statistik',
 		);
 		$this->template->load($this->foldertemplate.'template',$this->folder.'statistik',$data);
@@ -143,18 +143,38 @@ class Home extends CI_Controller{
   function diagnosa()
   {
     $data = array(
-			'subpage' => 'Puskesmas Penjaringan',
+			'subpage' => 'Puskesmas Cilincing',
 			'page' => 'Diagnosa',
 		);
 		$this->template->load($this->foldertemplate.'template',$this->folder.'diagnosa',$data);
   }
+
+  public function process()
+	{
+		$post = $this->input->post(null, TRUE);
+		if (isset($_POST['SaveRegs'])) {
+			if($this->M_user->cek_email($post['email'])->num_rows() > 0){
+				$this->session->set_flashdata('error', "Email <b>$post[email]</b> sudah terdaftar, silahkan ganti dengan yang berbeda");
+				redirect('diagnosa_penyakit');
+			} else if($this->M_user->cek_no_hp($post['no_hp'])->num_rows() > 0){
+				$this->session->set_flashdata('error', "Nomor Hp <b>$post[no_hp]</b> sudah terdaftar, silahkan ganti dengan yang berbeda");
+				redirect('diagnosa_penyakit');
+			}else{
+				$this->M_user->addpasien($post);
+			}
+		}
+		if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('success', 'Data berhasil disimpan, silahkan login');
+		}
+		redirect('auth');
+	}
 
   public function filter()
   {
     $post = $this->input->post(null, TRUE);
     if (isset($_POST['Filter'])) {
 			$data = array(
-        'subpage' => 'Puskesmas Penjaringan',
+        'subpage' => 'Puskesmas Cilincing',
   			'page' => 'Data Bencana',
 				'row' => $this->M_bencana->get(),
 				'jenis' => $this->M_bencana->getjenis(),
@@ -164,7 +184,7 @@ class Home extends CI_Controller{
     } else if (isset($_POST['Cetak'])) {
       $this->load->library('pdf');
 			$data = array(
-        'subpage' => 'Puskesmas Penjaringan',
+        'subpage' => 'Puskesmas Cilincing',
   			'page' => 'Data Bencana',
 				'row' => $this->M_bencana->get(),
 				'jenis' => $this->M_bencana->getjenis()->result(),
@@ -185,7 +205,7 @@ class Home extends CI_Controller{
   function kontak()
   {
     $data = array(
-			'subpage' => 'Puskesmas Penjaringan',
+			'subpage' => 'Puskesmas Cilincing',
 			'page' => 'Kontak',
 		);
 		$this->template->load($this->foldertemplate.'template',$this->folder.'kontak',$data);

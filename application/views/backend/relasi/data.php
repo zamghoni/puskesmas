@@ -65,6 +65,7 @@
                 <th>No</th>
                 <th>Nama Penyakit</th>
                 <th>Gejala</th>
+                <!-- <th>Bobot</th> -->
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -74,7 +75,12 @@
                 <tr>
                   <td width="1%"><?=$no?></td>
                   <td><?=$data->kd_penyakit.' | '.$data->nama_penyakit?></td>
-                  <td><?=$data->kd_gejala.' | '.$data->nama_gejala?></td>
+                  <td><?php foreach ($rowrelasi->result() as $key => $datarelasi){ ?>
+                    <?php if ($datarelasi->kd_penyakit == $data->kd_penyakit){ ?>
+                      <?=$datarelasi->kd_gejala.'|'.$datarelasi->nama_gejala?> <br>
+                    <?php } ?>
+                  <?php } ?></td>
+                  <!-- <td><?=$data->bobot?></td> -->
                   <td width="1%">
                     <a href="<?=site_url('relasi/edit/'.$data->id_relasi)?>" title="Edit" class="btn btn-sm btn-success"><i class="bx bx-edit me-0"></i></a>
                     <a href="<?=site_url('relasi/del/'.$data->id_relasi)?>" title="Hapus" class="btn btn-sm btn-danger hapus text-white"><i class="bx bx-trash me-0"></i></a>

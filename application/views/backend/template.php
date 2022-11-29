@@ -456,18 +456,22 @@
 					</div>
 					<div class="user-box dropdown">
 						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="<?=base_url('upload/foto/'.$this->fungsi->user_login()->foto)?>" class="user-img" alt="user avatar">
+							<?php if ($this->fungsi->user_login()->foto != null){ ?>
+								<img src="<?=base_url('upload/foto/'.$this->fungsi->user_login()->foto)?>" class="user-img" alt="user avatar">
+							<?php } else { ?>
+								<img src="<?=base_url('')?>assets/images/favicon/apple-icon-60x60.png" class="user-img" alt="user avatar">
+							<?php } ?>
 							<div class="user-info ps-3">
 								<?php if ($this->fungsi->user_login()->role != 1){ ?>
 									<p class="user-name mb-0"><?=$this->fungsi->user_login()->nama_lengkap;?></p>
 								<?php } else { ?>
-									<p class="user-name mb-0"><?=$this->fungsi->user_login()->nama_satgas;?></p>
+									<p class="user-name mb-0"><?=$this->fungsi->user_login()->nama_lengkap;?></p>
 								<?php } ?>
 								<p class="designattion mb-0">
 									<?php if ($this->fungsi->user_login()->role == 0){
 									echo "Admin";
 								}else if ($this->fungsi->user_login()->role == 1) {
-									echo "Satgas";
+									echo "Pasien";
 								} ?></p>
 							</div>
 						</a>

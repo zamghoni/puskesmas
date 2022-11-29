@@ -16,7 +16,7 @@ class Diagnosa extends CI_Controller{
 		parent::__construct();
 		belum_login();
 		cek_admin();
-		$this->load->model(array('M_diagnosa','M_penyakit'));
+		$this->load->model(array('M_diagnosa','M_penyakit','M_user'));
 		//Codeigniter : Write Less Do More
 	}
 
@@ -77,6 +77,7 @@ class Diagnosa extends CI_Controller{
 			'page' => 'Diagnosa',
 			'subpage' => 'Tambah',
 			'row' => $diagnosa,
+      'user' => $this->M_user->getpasien(),
 		);
 		if ($this->form_validation->run() == FALSE) {
 			$this->template->load($this->foldertemplate.'template',$this->folder.'form', $data);

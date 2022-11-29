@@ -23,12 +23,18 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
+                  <?php if ($this->fungsi->user_login()->foto != null){ ?>
                   <a href="<?=base_url('upload/foto/'.$row->foto)?>" data-lightbox="<?=$row->foto?>" title="Foto <?=ucfirst($row->nama_lengkap)?>">
                     <img src="<?=base_url('upload/foto/'.$row->foto)?>" alt="Admin" class="rounded-circle p-1 shadow" width="110" height="110">
                   </a>
+                <?php } else { ?>
+                  <a href="<?=base_url('')?>assets/images/favicon/apple-icon-60x60.png" data-lightbox="apple-icon-60x60.png" title="Foto <?=ucfirst($row->nama_lengkap)?>">
+                    <img src="<?=base_url('')?>assets/images/favicon/apple-icon-60x60.png" alt="Pasien" class="rounded-circle p-1 shadow" width="110" height="110">
+                  </a>
+                <?php } ?>
                   <div class="mt-3">
                     <?php if ($this->fungsi->user_login()->role != 0){ ?>
-                    <h4><?=$row->nama_satgas ?></h4>
+                    <h4><?=$row->nama_lengkap ?></h4>
                     <?php } else { ?>
                     <h4><?=$row->nama_lengkap ?></h4>
                   <?php } ?>
@@ -44,7 +50,7 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0">Nama Lengkap</h6>
                     <?php if ($this->fungsi->user_login()->role != 0){ ?>
-                    <span class="text-secondary"><?=$this->fungsi->user_login()->nama_satgas?></span>
+                    <span class="text-secondary"><?=$this->fungsi->user_login()->nama_lengkap?></span>
                   <?php } else { ?>
                     <span class="text-secondary"><?=$this->fungsi->user_login()->nama_lengkap?></span>
                   <?php } ?>
@@ -58,9 +64,15 @@
                     <span class="text-secondary"><?=$this->fungsi->user_login()->no_hp?></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 class="mb-0">Diubah pada</h6>
-                    <span class="text-secondary"><?=igDate($this->fungsi->user_login()->diubah)?></span>
+                    <h6 class="mb-0">Dibuat pada</h6>
+                    <span class="text-secondary"><?=igDate($this->fungsi->user_login()->dibuat)?></span>
                   </li>
+                  <?php if ($this->fungsi->user_login()->diubah != null){ ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                      <h6 class="mb-0">Diubah pada</h6>
+                      <span class="text-secondary"><?=igDate($this->fungsi->user_login()->diubah)?></span>
+                    </li>
+                  <?php } ?>
                 </ul>
               </div>
             </div>
@@ -86,7 +98,7 @@
                     <input type="hidden" name="id" value="<?=$this->fungsi->user_login()->id?>">
                     <input type="text" name="nama_lengkap" class="form-control"
                     <?php if ($this->fungsi->user_login()->role != 0){ ?>
-                    value="<?=$row->nama_satgas?>" readonly
+                    value="<?=$row->nama_lengkap?>" readonly
                   <?php } else{ ?>
                     value="<?=$row->nama_lengkap?>"
                   <?php } ?>required oninvalid="this.setCustomValidity('Masukkan Nama Lengkap anda')" oninput="setCustomValidity('')"  placeholder="Masukan nama lengkap">

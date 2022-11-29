@@ -62,14 +62,14 @@
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:poskobpbdkabtegal@gmail.com">pkm_penji@yahoo.co.id</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>021 669 4917</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:puskesmascilincing@gmail.com">puskesmascilincing@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>021 2148 40197</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="https://twitter.com/BpbdTegal" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/bpbd.kabtegal" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/bpbd.kabtegal/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.youtube.com/channel/UC1ZU60d64ibHAilhup6mHEg" target="_blank" class="google-plus"><i class="bx bxl-youtube"></i></a>
+        <a href="https://puskesmascilincing.jakarta.go.id/contact_us#" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://puskesmascilincing.jakarta.go.id/contact_us#" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://puskesmascilincing.jakarta.go.id/contact_us#" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://puskesmascilincing.jakarta.go.id/contact_us#" target="_blank" class="google-plus"><i class="bx bxl-youtube"></i></a>
       </div>
     </div>
   </section>
@@ -81,7 +81,7 @@
       <div class="logo">
         <!-- <h1><a href="index.html">BPBD KAB. TEGAL</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="<?=site_url('home')?>"><img src="<?=base_url('')?>assets/images/favicon/apple-icon-72x72.png" alt="" class="img-fluid"> <b class="text-success">Puskesmas Kec. Penjaringan</b></a>
+        <a href="<?=site_url('home')?>"><img src="<?=base_url('')?>assets/images/favicon/apple-icon-72x72.png" alt="" class="img-fluid"> <b class="text-success">Puskesmas Kec. Cilincing</b></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -151,7 +151,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Pelayanan Lain</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="http://puskesmaspenjaringan.com/umum/" target="_blank">Promosi Kesehatan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://puskesmascilincing.jakarta.go.id/" target="_blank">Promosi Kesehatan</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Kesehatan Lingkungan</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Kesehatan Ibu, Anak dan KB</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Gizi</a></li>
@@ -164,18 +164,17 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Hubungi kami</h4>
             <p>
-              Jl. Teluk Gong Raya No. 2 <br>
-              Kec. Penjaringan<br>
-              DKI Jakarta, Indonesia <br><br>
-              <strong>No HP:</strong> 021 669 4917<br>
-              <strong>Email:</strong> pkm_penji@yahoo.co.id
-<br>
+              Jl. Sungai Landak No. 26
+              Kec. Cilincing<br>
+              Jakarta Utara, Indonesia <br><br>
+              <strong>No HP:</strong> 021 2148 4019<br>
+              <strong>Email:</strong> puskesmascilincing@gmail.com<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Tentang SPK Puskesmas Penjaringan</h3>
+            <h3>Tentang SPK Puskesmas Cilincing</h3>
             <p>Pusat Kesehatan Masyarakat (Puskesmas) adalah fasilitas pelayanan kesehatan yang menyelenggarakan upaya kesehatan masyarakat dan upaya kesehatan perseorangan tingkat pertama, dengan lebih mengutamakan upaya promotif dan preventif di wilayah kerjanya.</p>
             <div class="social-links mt-3">
               <a href="https://twitter.com/BpbdTegal" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
