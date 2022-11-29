@@ -30,18 +30,18 @@
             echo form_open_multipart('diagnosa/process',$attributes); ?>
             <input type="hidden" name="id" value="<?=$row->id?>">
             <div class="row g-3">
-              <div class="col-md-12">
-                <label for="nama" class="form-label">Nama Pasien *</label>
-                <select class="single-select" id="nama" name="nama" required>
-                  <?php $nama = $this->input->post('nama') ? $this->input->post('nama') : $row->nama ?>
+              <div class="col-md-6">
+                <label for="id_user" class="form-label">Nama Pasien *</label>
+                <select class="single-select" id="id_user" name="id_user" required>
+                  <?php $id_user = $this->input->post('id_user') ? $this->input->post('id_user') : $row->id_user ?>
                   <option value="">- Daftar Pasien -</option>
                   <?php foreach ($user->result() as $key => $data) { ?>
-                  <option value="<?=$data->nama_lengkap?>" <?=$data->nama_lengkap == $nama ? 'selected' : null?>> <?=$data->nama_lengkap?> </option>
+                  <option value="<?=$data->id?>" <?=$data->id == $id_user ? 'selected' : null?>> <?=$data->nama_lengkap?> </option>
                 <?php } ?>
                 </select>
               </div>
-              <div class="col-md-12">
-                <label for="jk" class="form-label">Jenis Kemain *</label>
+              <div class="col-md-6">
+                <label for="jk" class="form-label">Jenis Kelamin *</label>
                 <select class="form-select" id="jk" name="jk" required>
                   <?php $jk = $this->input->post('jk') ? $this->input->post('jk') : $row->jk ?>
                   <option value="">- Pilih -</option>
@@ -49,14 +49,24 @@
                   <option value="Laki-laki" <?=$jk == 'Laki-laki' ? 'selected' : null?>> Laki-laki </option>
                 </select>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <label for="umur" class="form-label">Umur *</label>
                 <input type="text" class="form-control" name="umur" value="<?=$row->umur?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="25" required>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-6">
                 <label for="alamat" class="form-label">Alamat *</label>
                 <input type="text" name="alamat" class="form-control" id="alamat"
                  value="<?=$row->alamat?>" required oninvalid="this.setCustomValidity('Masukkan alamat anda')" oninput="setCustomValidity('')"  placeholder="Masukan alamat">
+              </div>
+              <div class="col-md-12">
+                <hr>
+                <h5>Silahkan pilih gejala-gejala yang anda alami dibawah ini:</h5>
+                <?php foreach ($gejala->result() as $key => $data){ ?>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="kd_gejala[]" value="<?=$data->kd_gejala?>">
+                    <label for="kd_gejala" class="form-check-label"><?=$data->nama_gejala?></label> <br>
+                  </div>
+                <?php } ?>
               </div>
               <div class="col-12 text-center">
                 <a href="<?=site_url('diagnosa')?>" class="btn btn-outline-secondary"><span class="bx bx-arrow-back"></span> Kembali</a>

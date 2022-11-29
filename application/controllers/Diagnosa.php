@@ -16,7 +16,7 @@ class Diagnosa extends CI_Controller{
 		parent::__construct();
 		belum_login();
 		cek_admin();
-		$this->load->model(array('M_diagnosa','M_penyakit','M_user'));
+		$this->load->model(array('M_diagnosa','M_penyakit','M_user','M_gejala'));
 		//Codeigniter : Write Less Do More
 	}
 
@@ -78,6 +78,7 @@ class Diagnosa extends CI_Controller{
 			'subpage' => 'Tambah',
 			'row' => $diagnosa,
       'user' => $this->M_user->getpasien(),
+      'gejala' => $this->M_gejala->get(),
 		);
 		if ($this->form_validation->run() == FALSE) {
 			$this->template->load($this->foldertemplate.'template',$this->folder.'form', $data);
@@ -101,24 +102,38 @@ class Diagnosa extends CI_Controller{
 		}
 	}
 
-
 	public function process()
 	{
 		$post = $this->input->post(null, TRUE);
 		if (isset($_POST['Tambah'])) {
-			if($this->M_diagnosa->cek_kd($post['kd_diagnosa'])->num_rows() > 0){
-				$this->session->set_flashdata('error', "Kode diagnosa <b>$post[kd_diagnosa]</b> sudah terdaftar, silahkan ganti dengan yang berbeda");
-				redirect('diagnosa/form');
-			} else{
-				$this->M_diagnosa->add($post);
-			}
+				$this->M_diagnosa->addtemppasien($post);
+        $this->M_diagnosa->addtempgejala($post);
 		}else if (isset($_POST['Edit'])) {
 			$this->M_diagnosa->edit($post);
 		}
 		if ($this->db->affected_rows() > 0) {
 			$this->session->set_flashdata('success', 'Data berhasil disimpan');
 		}
-		redirect('diagnosa');
+		redirect('diagnosa/hasil/'.$post['id_user']);
+	}
+
+  public function hasil($id)
+	{
+		$query = $this->M_diagnosa->gettmppasien($id);
+		if ($query->num_rows() > 0) {
+			$diagnosa = $query->row();
+			$data = array(
+			'page' => 'Diagnosa',
+			'subpage' => 'Hasil',
+			'row' => $diagnosa,
+      'gejala' => $this->M_diagnosa->gettmpgejala(),
+      'hsl_diagnosa' => $this->M_diagnosa->gethasil(),
+			);
+			$this->template->load($this->foldertemplate.'template',$this->folder.'hasil', $data);
+		} else {
+			$this->session->set_flashdata('error', "Data tidak ditemukan");
+			redirect('diagnosa','refresh');
+		}
 	}
 
 	public function del($id)

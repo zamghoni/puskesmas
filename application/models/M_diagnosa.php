@@ -46,6 +46,63 @@ class M_diagnosa extends CI_Model{
     return $query;
   }
 
+  public function addtemppasien($post)
+  {
+    $params = [
+      'id_user' => $post['id_user'],
+      'jk' => $post['jk'],
+      'umur' => $post['umur'],
+      'alamat' => $post['alamat'],
+      'tanggal' => date('Y-m-d H:i:s'),
+    ];
+    $this->db->insert('tmp_pasien', $params);
+  }
+
+  public function addtempgejala($post)
+  {
+    $id_user = $post['id_user'];
+    $jml_gejala = sizeof($this->input->post('kd_gejala'));
+    $main_arr=array();
+    for ($i=0; $i < $jml_gejala ; $i++) {
+      $params[$i] = array(
+        'id_user' => $id_user,
+        'tmpkd_gejala' => $this->input->post('kd_gejala['.$i.']'),
+      );
+      $main_arr[]=$params[$i];
+    }
+    $this->db->insert_batch('tmp_gejala', $main_arr);
+  }
+
+  function gettmppasien($id = null)
+  {
+    $this->db->from('tmp_pasien');
+    $this->db->join('user', 'user.id = tmp_pasien.id_user', 'left');
+    if ($id != null) {
+      $this->db->where('id_user',$id);
+    }
+    $query = $this->db->get();
+    return $query;
+  }
+
+  function gettmpgejala()
+  {
+    $this->db->from('tmp_gejala');
+    $this->db->join('gejala', 'gejala.kd_gejala = tmp_gejala.tmpkd_gejala', 'left');
+    $query = $this->db->get();
+    return $query;
+  }
+
+  function gethasil()
+  {
+    $this->db->from('relasi');
+    $this->db->join('tmp_gejala', 'tmp_gejala.tmpkd_gejala = relasi.kd_gejala', 'left');
+    $this->db->join('penyakit', 'penyakit.kd_penyakit = relasi.kd_penyakit', 'left');
+    $this->db->group_by('relasi.kd_penyakit');
+    $this->db->order_by('relasi.kd_penyakit', 'ASC');
+    $query = $this->db->get();
+    return $query;
+  }
+
   public function del($id)
 	{
     $this->db->where('id', $id);
