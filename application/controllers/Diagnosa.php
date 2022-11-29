@@ -26,6 +26,7 @@ class Diagnosa extends CI_Controller{
 			'subpage' => 'Data',
 			'page' => 'Diagnosa',
 			'row' => $this->M_diagnosa->get(),
+      'rowhasil' => $this->M_diagnosa->getanalisahasil(),
 			'penyakit' => $this->M_penyakit->get(),
 		);
 		$this->template->load($this->foldertemplate.'template',$this->folder.'data',$data);

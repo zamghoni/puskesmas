@@ -65,7 +65,7 @@ body {
 <p></p>
 <table width="50%" cellspacing="0" cellpadding="0">
   <?php if ($this->input->post('kd_penyakit')){ ?>
-    <?php foreach ($penyakit as $key => $data){ ?>
+    <?php foreach ($penyakit->result() as $key => $data){ ?>
       <?php if ($data->kd_penyakit == $this->input->post('kd_penyakit')){ ?>
         <tr>
           <td class="noBorder2">Nama Penyakit</td>
@@ -76,7 +76,7 @@ body {
     <?php } ?>
   <?php } ?>
   <?php if ($this->input->post('kd_gejala')){ ?>
-    <?php foreach ($gejala as $key => $data){ ?>
+    <?php foreach ($gejala->result() as $key => $data){ ?>
       <?php if ($data->kd_gejala == $this->input->post('kd_gejala')){ ?>
         <tr>
           <td class="noBorder2">Gejala</td>
@@ -94,8 +94,8 @@ body {
         <thead>
           <tr style="color:white">
             <th>No</th>
-            <th>Kode Gejala</th>
-            <th>Nama gejala</th>
+            <th>Nama Penyakit</th>
+            <th>Gejala</th>
           </tr>
         </thead>
         <tbody>
@@ -103,8 +103,12 @@ body {
           foreach($row->result()as $key => $data) {?>
             <tr>
               <td style="text-align: center;"><?=$no?></td>
-              <td><?=$data->kd_gejala?></td>
-              <td><?=$data->nama_gejala?></td>
+              <td><?=$data->kd_penyakit.' | '.$data->nama_penyakit?></td>
+              <td><?php foreach ($rowrelasi->result() as $key => $datarelasi){ ?>
+                <?php if ($datarelasi->kd_penyakit == $data->kd_penyakit){ ?>
+                  <?=$datarelasi->kd_gejala.'|'.$datarelasi->nama_gejala?> <br>
+                <?php } ?>
+              <?php } ?></td>
             </tr>
           <?php $no++; } ?>
           </tbody>

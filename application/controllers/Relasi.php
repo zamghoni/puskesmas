@@ -93,6 +93,7 @@ class relasi extends CI_Controller{
 				'subpage' => 'Data',
 				'page' => 'Relasi',
 				'row' => $this->M_relasi->get(),
+        'rowrelasi' => $this->M_relasi->getrelasi(),
 				'penyakit' => $this->M_penyakit->get(),
 				'gejala' => $this->M_gejala->get(),
 			);
@@ -103,6 +104,7 @@ class relasi extends CI_Controller{
 				'subpage' => 'Data',
 				'page' => 'Relasi',
 				'row' => $this->M_relasi->get(),
+        'rowrelasi' => $this->M_relasi->getrelasi(),
 				'penyakit' => $this->M_penyakit->get(),
 				'gejala' => $this->M_gejala->get(),
 			);

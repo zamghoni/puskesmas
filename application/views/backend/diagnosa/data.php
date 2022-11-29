@@ -82,11 +82,15 @@
                   <td><?=$data->umur?></td>
                   <td><?=$data->alamat?></td>
                   <td><?=$data->email?></td>
-                  <td><?=$data->kd_penyakit.' | '.$data->nama_penyakit?></td>
+                  <td><?php foreach ($rowhasil->result() as $key => $datarelasi){ ?>
+                    <?php if ($datarelasi->nama == $data->nama){ ?>
+                      <?=$datarelasi->kd_penyakit.'|'.$datarelasi->nama_penyakit?> <br>
+                    <?php } ?>
+                  <?php } ?></td>
                   <td><?=igDate($data->tanggal)?></td>
                   <td width="1%">
                     <!-- <a href="<?=site_url('diagnosa/edit/'.$data->id)?>" title="Edit" class="btn btn-sm btn-success"><i class="bx bx-edit me-0"></i></a> -->
-                    <a href="<?=site_url('diagnosa/del/'.$data->id)?>" title="Hapus" class="btn btn-sm btn-danger hapus text-white"><i class="bx bx-trash me-0"></i></a>
+                    <a href="<?=site_url('diagnosa/del/'.$data->nama)?>" title="Hapus" class="btn btn-sm btn-danger hapus text-white"><i class="bx bx-trash me-0"></i></a>
                   </td>
                 </tr>
               <?php $no++;
