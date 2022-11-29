@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 05:37 AM
+-- Generation Time: Nov 29, 2022 at 04:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -33,7 +33,7 @@ CREATE TABLE `analisa_hasil` (
   `jk` char(15) NOT NULL,
   `umur` varchar(3) NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `kd_penyakit` char(4) NOT NULL,
+  `kd_penyakit` char(4) DEFAULT NULL,
   `tanggal` datetime NOT NULL,
   `email` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -240,6 +240,51 @@ INSERT INTO `relasi` (`id_relasi`, `kd_gejala`, `kd_penyakit`, `bobot`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tmp_gejala`
+--
+
+CREATE TABLE `tmp_gejala` (
+  `id_temp_gjl` int(5) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `tmpkd_gejala` char(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tmp_gejala`
+--
+
+INSERT INTO `tmp_gejala` (`id_temp_gjl`, `id_user`, `tmpkd_gejala`) VALUES
+(1, 9, 'G001'),
+(2, 9, 'G002'),
+(3, 9, 'G003'),
+(4, 9, 'G004'),
+(5, 9, 'G005');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tmp_pasien`
+--
+
+CREATE TABLE `tmp_pasien` (
+  `id` int(4) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `jk` char(10) NOT NULL,
+  `umur` varchar(3) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `tanggal` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tmp_pasien`
+--
+
+INSERT INTO `tmp_pasien` (`id`, `id_user`, `jk`, `umur`, `alamat`, `tanggal`) VALUES
+(1, 9, 'Laki-laki', '34', 'Setu, Tarub', '2022-11-29 15:29:36');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -262,7 +307,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama_lengkap`, `email`, `no_hp`, `password`, `role`, `foto`, `dibuat`, `diubah`) VALUES
 (8, 'Admin', 'admin@gmail.com', '081563916752', '$2y$10$ke0.y4qcjGJ5WEa.vxxFdOr7XZUO41TwMhjTjnsQaLGK4aJr3BvEe', 0, 'Foto_User221121-6a62f90543.png', '2022-10-15 05:24:55', '2022-11-21 05:41:41'),
 (9, 'M. Oki Mualimin', 'pasien1@gmail.com', '085226351703', '$2y$10$Ne8wIMZwO9OzMSHXfldRUe0g7g.nQQW6M8uStwdPDg/OI4aorxG8a', 1, 'Foto_User221105-611603f6bc.png', '2022-10-15 05:25:33', '2022-11-23 03:54:17'),
-(11, 'Pasien 2', 'pasien2@gmail.com', '09090909090', '$2y$10$BngFbMjF5mElWBRx9b0wxOzF/AjIIIh6TVa5baqg1EPWggZu1Pmx2', 1, NULL, '2022-11-01 06:02:21', '2022-11-23 03:54:34');
+(11, 'Pasien 2', 'pasien2@gmail.com', '123', '$2y$10$IAjZEmL8MvInrsHqwTXB8u1/zPb4fnRMulOyfB8Trxr.7orSIdwkG', 1, NULL, '2022-11-01 06:02:21', '2022-11-28 14:07:11');
 
 --
 -- Indexes for dumped tables
@@ -305,6 +350,18 @@ ALTER TABLE `relasi`
   ADD PRIMARY KEY (`id_relasi`);
 
 --
+-- Indexes for table `tmp_gejala`
+--
+ALTER TABLE `tmp_gejala`
+  ADD PRIMARY KEY (`id_temp_gjl`);
+
+--
+-- Indexes for table `tmp_pasien`
+--
+ALTER TABLE `tmp_pasien`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -339,10 +396,22 @@ ALTER TABLE `relasi`
   MODIFY `id_relasi` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT for table `tmp_gejala`
+--
+ALTER TABLE `tmp_gejala`
+  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tmp_pasien`
+--
+ALTER TABLE `tmp_pasien`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
