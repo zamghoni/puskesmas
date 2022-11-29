@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 04:20 PM
+-- Generation Time: Nov 29, 2022 at 07:40 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -57,10 +57,10 @@ INSERT INTO `analisa_hasil` (`id`, `nama`, `jk`, `umur`, `alamat`, `kd_penyakit`
 (546, 'Maisura', 'Wanita', '26', 'Buloh Raya', 'P004', '2013-08-21 09:26:35', 'maisura@gmail.com'),
 (602, 'Tafa', 'Laki-laki', '18', 'Gresik', 'P005', '2022-10-02 19:48:20', ''),
 (603, 'Tafa', 'Laki-laki', '18', 'Gresik', 'P002', '2022-10-02 19:48:20', ''),
-(604, 'ucok', 'Laki-laki', '15', 'aa', 'P002', '2022-11-21 14:12:33', ''),
-(605, 'ucok', 'Laki-laki', '15', 'aa', 'P003', '2022-11-21 14:12:33', ''),
-(606, 'riana', 'Laki-laki', '36', 'asas', 'P006', '2022-11-21 20:44:37', ''),
-(607, 'riana', 'Laki-laki', '36', 'asas', 'P001', '2022-11-21 20:44:37', '');
+(619, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P005', '2022-11-30 01:33:11', ''),
+(618, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P003', '2022-11-30 01:33:11', ''),
+(616, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P001', '2022-11-30 01:33:11', ''),
+(617, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P002', '2022-11-30 01:33:11', '');
 
 -- --------------------------------------------------------
 
@@ -249,17 +249,6 @@ CREATE TABLE `tmp_gejala` (
   `tmpkd_gejala` char(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tmp_gejala`
---
-
-INSERT INTO `tmp_gejala` (`id_temp_gjl`, `id_user`, `tmpkd_gejala`) VALUES
-(1, 9, 'G001'),
-(2, 9, 'G002'),
-(3, 9, 'G003'),
-(4, 9, 'G004'),
-(5, 9, 'G005');
-
 -- --------------------------------------------------------
 
 --
@@ -274,13 +263,6 @@ CREATE TABLE `tmp_pasien` (
   `alamat` varchar(100) NOT NULL,
   `tanggal` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tmp_pasien`
---
-
-INSERT INTO `tmp_pasien` (`id`, `id_user`, `jk`, `umur`, `alamat`, `tanggal`) VALUES
-(1, 9, 'Laki-laki', '34', 'Setu, Tarub', '2022-11-29 15:29:36');
 
 -- --------------------------------------------------------
 
@@ -375,7 +357,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `analisa_hasil`
 --
 ALTER TABLE `analisa_hasil`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=610;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=620;
 
 --
 -- AUTO_INCREMENT for table `bencana`
@@ -399,13 +381,13 @@ ALTER TABLE `relasi`
 -- AUTO_INCREMENT for table `tmp_gejala`
 --
 ALTER TABLE `tmp_gejala`
-  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tmp_pasien`
 --
 ALTER TABLE `tmp_pasien`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
