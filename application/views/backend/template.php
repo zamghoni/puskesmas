@@ -97,6 +97,13 @@
 					</a>
 				</li>
 				<li class="dropdown-divider mb-0 mt-2"></li>
+				<li>
+					<a href="<?=site_url('diagnosa/form')?>">
+						<div class="parent-icon"><i class="bx bx-plus"></i>
+						</div>
+						<div class="menu-title">Tambah Diagnosa</div>
+					</a>
+				</li>
 				<li class="<?=activate_menu('diagnosa')?>">
 					<a href="<?=site_url('diagnosa')?>">
 						<div class="parent-icon"><i class="bx bx-data"></i>

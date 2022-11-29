@@ -117,6 +117,24 @@ class Diagnosa extends CI_Controller{
 		redirect('diagnosa/hasil/'.$post['id_user']);
 	}
 
+  public function savediagnosa()
+	{
+		$post = $this->input->post(null, TRUE);
+    $user_id = $this->input->post('id_user');
+		if (isset($_POST['Removetmp'])) {
+				$this->M_diagnosa->deltmp_gejala($user_id);
+        $this->M_diagnosa->deltmp_pasien($user_id);
+		}else if (isset($_POST['SaveDiagnosa'])) {
+			$this->M_diagnosa->addhasildiagnosa($post);
+      $this->M_diagnosa->deltmp_gejala($user_id);
+      $this->M_diagnosa->deltmp_pasien($user_id);
+		}
+		if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('success', 'Data berhasil disimpan');
+		}
+		redirect('diagnosa');
+	}
+
   public function hasil($id)
 	{
 		$query = $this->M_diagnosa->gettmppasien($id);

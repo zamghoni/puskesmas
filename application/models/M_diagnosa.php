@@ -73,6 +73,25 @@ class M_diagnosa extends CI_Model{
     $this->db->insert_batch('tmp_gejala', $main_arr);
   }
 
+  public function addhasildiagnosa($post)
+  {
+    $id_user = $post['id_user'];
+    $jml_penyakit = sizeof($this->input->post('kd_penyakit'));
+    $main_arr=array();
+    for ($i=0; $i < $jml_penyakit ; $i++) {
+      $params[$i] = array(
+        'nama' => $post['nama'],
+        'jk' => $post['jk'],
+        'umur' => $post['umur'],
+        'alamat' => $post['alamat'],
+        'tanggal' => date('Y-m-d H:i:s'),
+        'kd_penyakit' => $this->input->post('kd_penyakit['.$i.']'),
+      );
+      $main_arr[]=$params[$i];
+    }
+    $this->db->insert_batch('analisa_hasil', $main_arr);
+  }
+
   function gettmppasien($id = null)
   {
     $this->db->from('tmp_pasien');
@@ -102,6 +121,18 @@ class M_diagnosa extends CI_Model{
     $query = $this->db->get();
     return $query;
   }
+
+  public function deltmp_gejala($id)
+	{
+    $this->db->where('id_user', $id);
+    $this->db->delete('tmp_gejala');
+	}
+
+  public function deltmp_pasien($id)
+	{
+    $this->db->where('id_user', $id);
+    $this->db->delete('tmp_pasien');
+	}
 
   public function del($id)
 	{
