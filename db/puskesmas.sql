@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 08:19 AM
+-- Generation Time: Nov 30, 2022 at 05:31 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -43,24 +43,7 @@ CREATE TABLE `analisa_hasil` (
 --
 
 INSERT INTO `analisa_hasil` (`id`, `nama`, `jk`, `umur`, `alamat`, `kd_penyakit`, `tanggal`, `email`) VALUES
-(492, 'Rahmi', 'Wanita', '22', 'Lhokseumawe', 'P001', '2012-10-04 03:09:45', 'rahmiana@gmail.com'),
-(536, 'Cut Maria Aini', 'Wanita', '23', 'langkahan', 'P002', '2013-07-28 18:08:23', 'cutmaria@yahoo.com'),
-(560, 'Mutiara', 'Wanita', '26', 'Lhok bintanng hu lhoksukon', 'P003', '2015-12-28 02:47:33', 'mutiarz@yahoo.com'),
-(535, 'Cut Ulvatul jannah', 'Wanita', '28', 'Geudong', 'P006', '2013-07-28 18:08:23', 'ulva19@gmail.com'),
-(572, 'Mutiara', 'Wanita', '26', 'Lhok bintanng hu lhoksukon', 'P004', '2015-12-28 02:47:33', 'mutiaraindah@gmail.c'),
-(558, 'Dewi Ratna', 'Wanita', '22', 'Simpang Kramat', 'P005', '2015-01-22 10:11:27', 'ratnadewi12@gmail.co'),
-(569, 'Misbahul Jannah', 'Wanita', '26', 'Lhok bintanng hu lhoksukon', 'P001', '2015-12-28 02:47:33', 'misbah22@gmail.com'),
-(557, 'Dewi Mustika', 'Wanita', '31', 'Mane Kareung', 'P003', '2015-01-22 10:11:27', 'mustikaindah@gmail.c'),
-(580, 'Faisal', 'Laki-laki', '22', 'Lhokseumawe', 'P003', '2016-01-29 12:23:49', 'arongan@gmail.com'),
-(581, 'Mardiya', 'Laki-laki', '22', 'geudong', 'P003', '2016-12-19 09:53:40', 'martunis@gmail.com'),
-(545, 'Cut Yunita', 'Wanita', '22', 'Buloh Raya', 'P001', '2013-08-22 09:26:35', 'cuticut@yahoo.com'),
-(546, 'Maisura', 'Wanita', '26', 'Buloh Raya', 'P004', '2013-08-21 09:26:35', 'maisura@gmail.com'),
-(602, 'Tafa', 'Laki-laki', '18', 'Gresik', 'P005', '2022-10-02 19:48:20', ''),
-(603, 'Tafa', 'Laki-laki', '18', 'Gresik', 'P002', '2022-10-02 19:48:20', ''),
-(619, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P005', '2022-11-30 01:33:11', ''),
-(618, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P003', '2022-11-30 01:33:11', ''),
-(616, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P001', '2022-11-30 01:33:11', ''),
-(617, 'Pasien 2', 'Laki-laki', '30', 'Kotabaru, Brebes', 'P002', '2022-11-30 01:33:11', '');
+(1, 'M. Oki Mualimin', 'Laki-laki', '29', 'Cilincing', 'P005', '2022-11-30 23:25:27', '');
 
 -- --------------------------------------------------------
 
@@ -78,27 +61,39 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`kd_gejala`, `nama_gejala`) VALUES
-('G001', 'Mual'),
-('G002', 'Muntah'),
-('G003', 'Muntah agak asam'),
-('G004', 'Muntah darah'),
-('G005', 'Panas'),
-('G006', 'Sakit perut'),
-('G007', 'Buang air besar terus-menerus'),
-('G008', 'Mulut luka'),
-('G009', 'Demam'),
-('G010', 'Bibir pecah-pecah'),
-('G011', 'Badan lesu atau lemah'),
-('G012', 'Pusing'),
-('G013', 'Kehilangan nafsu makan'),
-('G014', 'Perut terasa nyeri, pedih, kembung, dan sesak (sebak) pada bagian atas perut'),
-('G015', 'Mulut kering'),
-('G016', 'Sering sendawa terutama bila dalam keadaan lapar'),
-('G017', 'Sulit tidur karena gangguan rasa sakit pada daerah perut sebelah atas (ulu hati) '),
-('G018', 'Bengkak di kedua rahang/pipi'),
-('G019', 'Bau nafas tidak sedap'),
-('G020', 'Darah dan lendir dalam kotoran'),
-('G021', 'Tidak buang air besar lebih dari 3 hari');
+('G001', 'Sering Buang Air Kecil'),
+('G002', 'Gampang Haus'),
+('G003', 'Cepat Lapar'),
+('G004', 'Berat Badan Turun Drastis'),
+('G005', 'Kulit Kering'),
+('G006', 'Luka Susah Sembuh'),
+('G007', 'Gangguan Penglihatan'),
+('G008', 'Kesemutan'),
+('G009', 'Sesak Napas'),
+('G010', 'Lemas'),
+('G011', 'Nyeri Dada'),
+('G012', 'Keringat Dingin'),
+('G014', 'Terasa Tertekan Dibagian Dada'),
+('G015', 'Batuk Lebih Dari 2 Minggu'),
+('G016', 'Sputum (Batuk Berdahak)'),
+('G017', 'Kadang Disertai Mengi'),
+('G018', 'Susah Tidur'),
+('G019', 'Mudah Lelah'),
+('G020', 'Depresi'),
+('G021', 'Sakit Kepala'),
+('G022', 'Rasa Mual Atau Muntah'),
+('G023', 'Merasa Cemas/gelisah'),
+('G024', 'Mimisan'),
+('G025', 'Detak Jantung Tak Beraturan'),
+('G026', 'Mudah Marah'),
+('G027', 'Meningkatnya Napsu Makan'),
+('G028', 'Pusing Hingga Merasa Ingin Pingsan'),
+('G029', 'Lemah Pada Otot-otot Wajah'),
+('G030', 'Kesulitan Mengangkat Kedua Tangan'),
+('G031', 'Kesulitan Berbicara'),
+('G032', 'Kebas Pada Setengah Badan'),
+('G033', 'Tremor/gemeteran'),
+('G034', 'Sulit Menelan');
 
 -- --------------------------------------------------------
 
@@ -118,12 +113,11 @@ CREATE TABLE `penyakit` (
 --
 
 INSERT INTO `penyakit` (`kd_penyakit`, `nama_penyakit`, `definisi`, `solusi`) VALUES
-('P001', 'Gastritis', 'Gastritis adalah peradangan pada lapisan lambung. Penyebab gastritis adalah terlalu banyak minum-minuman beralkohol, penggunaan jangka panjang obat aspirin dan ibuprofen, dll. Gastritis juga dapat muncul setelah operasi, luka trauma, luka bakar, atau infeksi berat. Penyebab kronisnya adalah infeksi bakteri Heliobacter pylori, refluks empedu, dan stress. Gejala gastritis adalah gangguan pencernaan, perut kembung, mual, dan muntah. Cara mencegah gastritis adalah dengan menghindari makanan pedas atau panas.', 'Istirahat di tempat tidur selama masih demam dan pembengkakan kelenjar parotis masih ada. Simtomatik diberikan kompres demam atau dingin serta dapat diberikan analgetik. Diet makanan cair atau lunak tergantung dari kemampuan menelan. Kortikosteroid diberikan selama 2-4 hari dan globulin gama dipikirkan apabila terdapat orkitis.'),
-('P002', 'Maag', 'Maag atau tukak lambung adalah peradangan pada dinding lambung yang disebabkan oleh pengeluaran asam lambung (asam klorida) yang berlebihan. Asam lambung secara rutin keluar untuk membantu menghancurkan makanan. Namun jika tidak ada makanan dalam jangka waktu tertentu, maka asam lambung akan tetap keluar dan mengikis dinding lambung. Ketika asam lambung tersebut mengenai saraf, terjadilah rasa sakit yang luar biasa yang biasa kita kenal sebagai maag. Cara mencegah maag adalah dengan makan teratur dan menghindari makanan yang terlalu pedas. Cara mengobati penyakit maag adalah dengan meminum obat antasida.', '1.Tidur dengan mulut terbuka menyebabkan mulut kering di pagi hari. Sebisa mungkin bernapaslah dengan hidung ketika tidur.\r\n\r\n2. Menggunakan produk pencegah mulut kering. Untuk lebih aman, konsultasikan dengan dokter mengenai produk yang paling tepat.\r\n\r\n3. Menjaga kebersihan mulut. Sikat gigi dan berkumur secara teratur. Gunakan pula benang gigi (dental floss).\r\n\r\n4. Minum air sedikitnya 8 gelas per hari.\r\n\r\n5. Hindari konsumsi kafein dan alkohol'),
-('P003', 'Kanker Lambung', 'Kanker lambung adalah kanker yang berkembang di area lambung. Gejala awal kanker lambung adalah mulas, nyeri pada perut bagian atas, mual, dan kehilangan nafsu makan. Gejala selanjutnya adalah penurunan berat badan, kulit kuning, muntah, kesulitan menelan, dan terdapat darah dalam tinja. Kanker dapat menyebar dari lambung ke bagian lain seperti hati, paru-paru, tulang, lapisan perut, dan kelenjar getah bening. Penyebab utama kanker lambung adalah infeksi bakteri Helicobacter pylori. Penyebab lainnya adalah merokok.', 'Makan secara teratur sangat dianjurkan untuk mengurangi resiko  timbulnya tukak lambung.'),
-('P004', 'Tumor Lambung / Polip Lambung', 'Tumor lambung adalah tumor yang ditandai dengan tumbuhnya polip (bintil-bintil) pada lambung. Tumor lambung masih bisa diangkat dan tidak berbahaya karena tidak menyebar ke organ tubuh lain. Salah satu penyebab tumor lambung adalah terlalu sering mengkonsumsi makanan bernitrat. Nitrat adalah zat pengawet yang biasa terdapat di makanan dan minuman dalam kemasan. Mengonsumsi terlalu banyak makanan yang diasinkan dan diasap serta merokok juga beresiko terjadinya tumor lambung. Tumor lambung akan menjadi kanker lambung jika polip berukuran lebih dari 2 cm, terdapat selglandular, dan terdapat banyak polip di dalam lambung.', 'segera lakukan pembedahan untuk mencegah terjadinya ruptur (peca)dan Pembedahan yang segera dilakukan bisa mengurangi angka kematian pada apendisitis.'),
-('P005', 'Dispepsia', 'Dispepsia\r\nDispepsia adalah gangguan pencernaan yang ditandai dengan nyeri dan perih di bagian atas perut serta perut terasa penuh padahal belum makan. Terkadang disertai dengan perut kembung, bersendawa, mual, dan maag. Dispepsia sering terjadi pada penderita GERD dan gastritis.', '1. Menerapkan perilaku hidup sehat dengan mencuci tangan memakai sabun terutama setelah kontak dengan benda-benda kotor. \r\n2. Meningkatkan kebersihan lingkungan dan pemberian gizi yang seimbang. \r\n3. Menjaga kebersihan dari makanan atau minuman yang Anda makan.\r\n4. untuk pengobatannya pun anda dapat menkonsumsi obat-obat tradisional seperti jus kulit mangis, dan daun sirsak. Atau anda langsung berobat ke dokter.'),
-('P006', 'GERD (Gastroesophageal Reflux Disease)', 'GERD adalah kerusakan kronis pada mukosa lambung yang disebabkan oleh asam lambung yang terus mengikis dinding lambung. Banyak orang yang mengira penyakit ini mirip maag. Namun ada beberapa gejala khusus antara lain sakit saat menelan, rasa asam di mulut, sering bersendawa, dan sering terserang radang tenggorokan. Penyebab penyakit ini adalah kecemasan, depresi, langsung tidur setelah makan, makan makanan yang terlalu pedas atau asam, jarang olahraga, dan kebiasaan merokok.', 'Untuk  mencegah sembelit dianjurkan untuk perbanyak mengkonsumsi makanan yang berserat, kurangi makan daging, buang air besar secara teratur setiap hari dan perbanyak makan sayur dan buah-buahan serta minum air putih.');
+('P001', 'Hipertensi', 'Hipertensi adalah salah satu jenis Penyakit kelainan jantung dan pembuluh darah yg ditandai dengan peningkatan tekanan darah(darah tinggi). Kondisi saat tekanan darah berada pada nilai 130/80 mmHg atau lebih. Kondisi ini dapat menjadi berbahaya, karena jantung dipaksa memompa darah lebih keras ke seluruh tubuh, hingga bisa mengakibatkan timbulnya berbagai penyakit, seperti gagal ginjal, stroke, dan gagal jantung.', '1) Membatasi asupan garam, perbanyak sayur; \r\n2) Perbanyak olahraga kardio seperti berjalan rutin atau olahraga jalan cepat; \r\n3) Perbanyak mengkonsumsi kentang untuk mengontrol tekanan darah; \r\n4) Melakukan terapi relaksasi untuk mengelola stress, seperti yoga/meditas; \r\n5) Mengurangi asupan kabohidrat dan gula; \r\n6) Berhenti minum alkohol dan merokok; \r\n'),
+('P002', 'Jantung Koroner', 'Jantung Koroner merupakan gangguan fungsi jantung akibat otot jantung kekurangan darah dikarenakan penyumbatan atau penyempitan pada pembuluh darah koroner akibat kerusakan dinding pembuluh darah (aterosklerosis). ', '1) Katerisasi jantung; \r\n2) Pemasangan ring jantung; \r\n3) Dilakukan bypass dengan menggunakan cangkok pembuluh darah baru dari organ tubuh kita; \r\n4) Memeriksa kesehatan secara rutin; \r\n5) Diet dengan gizi seimbang; \r\n6) Hindari asap rokok, alkohol; \r\n7) Istirahat dengan cukup, tidur 7-8 jam sehari; \r\n'),
+('P003', 'Diabetes Militus', 'Diabetes melitus atau penyakit kencing manis adalah suatu penyakit kronis ketika kadar gula darah (glukosa) di dalam tubuh terlampau tinggi dan berada di atas normal. ', '1) Menjaga pola hidup sehat; \r\n2) Mengurangi makanan tinggi karbohidrat dan lemak; \r\n3) Perbanyak makanan tinggi serat; \r\n4) Meningkatkan aktivitas fisik dengan bberolahraga teratur 30–45 menit sehari sebanyak 3-5 kali per minggu; \r\n5) Menurunkan berat badan; \r\n'),
+('P004', 'Paru Ekstruktif Kronik', 'Penyakit Paru Obstruksi Kronik atau sering disingkat PPOK merupakan suatu istilah yang sering digunakan untuk sekelompok penyakit paru-paru yang berlangsung lama.  Penyakit ini menghalangi aliran udara sehingga menyebabkan penderita mengalami kesulitan dalam bernafas.', '1) Berhenti merokok secara aktif maupun pasif; \r\n2) Memakai alat pelindung diri, contoh masker; \r\n3) Mengkonsumsi makanan bergizi; \r\n4) Pemeriksaan fisik secara rutin; \r\n'),
+('P005', 'Stroke', 'Stoke merupakan kondisi yang terjadi ketika pasokan darah ke otak mengalami gangguan atau berkurang akibat penyumbatan (stroke iskemik) atau pecahnya pembuluh darah (stroke hemoragik). Tanpa pasokan darah, otak tidak akan mendapatkan asupan oksigen dan nutrisi, sehingga sel-sel pada sebagian area otak akan mati. Kondisi ini menyebabkan bagian tubuh yang dikendalikan oleh area otak yang rusak tidak dapat berfungsi dengan baik.', '1) Menjaga pola makan; \r\n2) Rutin berolahraga;\r\n3) Berhenti dan hindari rokok dan minuman beralkohol; \r\n4) Segera periksa ke dokter; \r\n');
 
 -- --------------------------------------------------------
 
@@ -143,33 +137,49 @@ CREATE TABLE `relasi` (
 --
 
 INSERT INTO `relasi` (`id_relasi`, `kd_gejala`, `kd_penyakit`, `bobot`) VALUES
-(1, 'G008', 'P002', 5),
-(2, 'G018', 'P001', 5),
-(3, 'G013', 'P001', 1),
-(4, 'G009', 'P001', 3),
-(5, 'G010', 'P002', 3),
-(6, 'G015', 'P002', 5),
-(7, 'G019', 'P002', 1),
-(8, 'G001', 'P003', 1),
-(9, 'G002', 'P003', 1),
-(10, 'G003', 'P003', 5),
-(11, 'G004', 'P003', 5),
-(12, 'G006', 'P003', 1),
-(13, 'G013', 'P003', 3),
-(14, 'G014', 'P003', 5),
-(15, 'G016', 'P003', 5),
-(16, 'G017', 'P003', 5),
-(17, 'G019', 'P003', 1),
-(18, 'G005', 'P004', 1),
-(19, 'G006', 'P004', 5),
-(20, 'G009', 'P004', 1),
-(21, 'G007', 'P005', 5),
-(22, 'G020', 'P005', 5),
-(23, 'G011', 'P005', 1),
-(24, 'G012', 'P005', 1),
-(25, 'G013', 'P005', 1),
-(26, 'G021', 'P006', 5),
-(36, 'G005', 'P006', 5);
+(1, 'G021', 'P001', 1),
+(2, 'G007', 'P001', 1),
+(3, 'G011', 'P001', 1),
+(4, 'G022', 'P001', 1),
+(5, 'G023', 'P001', 1),
+(6, 'G019', 'P001', 1),
+(7, 'G024', 'P001', 1),
+(8, 'G025', 'P001', 1),
+(9, 'G001', 'P001', 1),
+(10, 'G026', 'P001', 1),
+(11, 'G001', 'P003', 1),
+(12, 'G009', 'P002', 1),
+(13, 'G010', 'P002', 1),
+(14, 'G011', 'P002', 1),
+(15, 'G012', 'P002', 1),
+(16, 'G022', 'P002', 1),
+(17, 'G014', 'P002', 1),
+(18, 'G002', 'P003', 1),
+(19, 'G003', 'P003', 1),
+(20, 'G004', 'P003', 1),
+(21, 'G005', 'P003', 1),
+(22, 'G006', 'P003', 1),
+(23, 'G007', 'P003', 1),
+(24, 'G008', 'P003', 1),
+(25, 'G009', 'P004', 1),
+(26, 'G015', 'P004', 1),
+(27, 'G016', 'P004', 1),
+(28, 'G017', 'P004', 1),
+(29, 'G010', 'P004', 1),
+(30, 'G018', 'P004', 1),
+(31, 'G019', 'P004', 1),
+(32, 'G020', 'P004', 1),
+(33, 'G004', 'P004', 1),
+(34, 'G029', 'P005', 1),
+(35, 'G030', 'P005', 1),
+(36, 'G031', 'P005', 1),
+(37, 'G008', 'P005', 1),
+(38, 'G032', 'P005', 1),
+(39, 'G033', 'P005', 1),
+(40, 'G022', 'P005', 1),
+(41, 'G021', 'P005', 1),
+(42, 'G034', 'P005', 1),
+(43, 'G007', 'P005', 1);
 
 -- --------------------------------------------------------
 
@@ -281,25 +291,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `analisa_hasil`
 --
 ALTER TABLE `analisa_hasil`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=622;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `relasi`
 --
 ALTER TABLE `relasi`
-  MODIFY `id_relasi` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_relasi` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `tmp_gejala`
 --
 ALTER TABLE `tmp_gejala`
-  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tmp_pasien`
 --
 ALTER TABLE `tmp_pasien`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`

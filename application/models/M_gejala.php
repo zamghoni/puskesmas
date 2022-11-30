@@ -12,6 +12,7 @@ class M_gejala extends CI_Model{
   function get($id = null)
   {
     $this->db->from('gejala');
+    $this->db->order_by('kd_gejala','DESC');
     if ($id != null) {
       $this->db->where('kd_gejala',$id);
     }

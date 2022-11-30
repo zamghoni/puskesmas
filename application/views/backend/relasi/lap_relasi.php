@@ -58,7 +58,7 @@ body {
 <body>
 <header>
   <img src="assets/images/favicon/apple-icon-180x180.png" width="72px" height="72px"><br>
-  <h4 style="font-size:14px"><?=strtoupper($subpage.' '.$page)?> <br> Puskesmas Penjaringan <br>
+  <h4 style="font-size:14px"><?=strtoupper($subpage.' '.$page)?> <br> Puskesmas Cilincing <br>
     <?php $tanggal = date('Y-m-d'); ?>
     PER <?=date_indo($tanggal)?></h4>
 </header>

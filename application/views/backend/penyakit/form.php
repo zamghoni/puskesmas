@@ -32,7 +32,7 @@
               <div class="col-md-12">
                 <label for="kd_penyakit" class="form-label">Kode penyakit *</label>
                 <input type="text" name="kd_penyakit" class="form-control" id="kd_penyakit"
-                required oninvalid="this.setCustomValidity('Masukkan Kode penyakit')" oninput="setCustomValidity('')"  placeholder="Masukan kode penyakit"
+                required oninvalid="this.setCustomValidity('Masukkan Kode penyakit')" oninput="setCustomValidity('')"  placeholder="Masukan kode penyakit" autofocus
                 <?php if ($subpage != "Tambah"){ ?>
                   value="<?=$row->kd_penyakit?>" readonly
                 <?php } ?>
@@ -41,7 +41,7 @@
               <div class="col-md-12">
                 <label for="nama_penyakit" class="form-label">Nama penyakit *</label>
                 <input type="text" name="nama_penyakit" class="form-control" id="nama_penyakit"
-                value="<?=$row->nama_penyakit?>" required oninvalid="this.setCustomValidity('Masukkan Nama penyakit')" oninput="setCustomValidity('')"  placeholder="Masukan nama penyakit" autofocus>
+                value="<?=$row->nama_penyakit?>" required oninvalid="this.setCustomValidity('Masukkan Nama penyakit')" oninput="setCustomValidity('')"  placeholder="Masukan nama penyakit">
               </div>
               <div class="col-md-12">
                 <label for="definisi" class="form-label">Definisi penyakit *</label>

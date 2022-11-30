@@ -58,7 +58,7 @@ body {
 <body>
 <header>
   <img src="assets/images/favicon/apple-icon-180x180.png" width="72px" height="72px"><br>
-  <h4 style="font-size:14px"><?=strtoupper($subpage.' '.$page)?> <br> Puskesmas Penjaringan <br>
+  <h4 style="font-size:14px"><?=strtoupper($subpage.' '.$page)?> <br> Puskesmas Cilincing <br>
     <?php $tanggal = date('Y-m-d'); ?>
     PER <?=date_indo($tanggal)?></h4>
 </header>
@@ -109,7 +109,11 @@ body {
               <td><?=$data->umur?></td>
               <td><?=$data->alamat?></td>
               <td><?=$data->email?></td>
-              <td><?=$data->kd_penyakit.' | '.$data->nama_penyakit?></td>
+              <td><?php foreach ($rowhasil->result() as $key => $datarelasi){ ?>
+                <?php if ($datarelasi->nama == $data->nama){ ?>
+                  <?=$datarelasi->kd_penyakit.'|'.$datarelasi->nama_penyakit?><br>
+                <?php } ?>
+              <?php } ?></td>
               <td><?=igDate($data->tanggal)?></td>
             </tr>
           <?php $no++; } ?>

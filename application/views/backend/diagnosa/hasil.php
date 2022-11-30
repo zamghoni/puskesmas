@@ -79,28 +79,27 @@
                     <?=$no.'. '.$hsl->nama_penyakit ?><br />
                     <input type="hidden" class="form-check-input" name="kd_penyakit[]" value="<?=$hsl->kd_penyakit?>">
                   </h6>
-                    <p class="text-justify"><?=$hsl->definisi?></p>
-                    <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
-									<div class="d-flex align-items-center">
-										<div class="font-35 text-white"><i class="bx bxs-check-circle"></i>
-										</div>
-										<div class="ms-3">
-											<h6 class="mb-0 text-white">Solusi</h6>
-											<div class="text-white"><?=$hsl->solusi?></div>
-										</div>
-									</div>
-									<!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
-								</div>
-
-            <?php $no++; $count++; } } } ?>
-            <p>Total diagnosa : <?=$count?> penyakit</p>
-            <div class="col-12 text-center">
-              <button type="submit" name="Removetmp" class="btn btn-outline-secondary"><span class="bx bx-arrow-back"></span> Kembali</button>
-              <button type="submit" name="SaveDiagnosa" class="btn btn-primary px-2"><span class="bx bx-save"></span> Simpan Hasil</button>
+                  <p class="text-justify"><?=$hsl->definisi?></p>
+                  <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
+                    <div class="d-flex align-items-center">
+                      <div class="font-35 text-white"><i class="bx bxs-check-circle"></i>
+                      </div>
+                      <div class="ms-3">
+                        <h6 class="mb-0 text-white">Solusi</h6>
+                        <div class="text-white"><?=$hsl->solusi?></div>
+                      </div>
+                    </div>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+                  </div>
+                  <?php $no++; $count++; } } } ?>
+                  <p>Total diagnosa : <?=$count?> penyakit</p>
+                  <div class="col-12 text-center">
+                    <button type="submit" name="Removetmp" class="btn btn-outline-secondary"><span class="bx bx-arrow-back"></span> Kembali</button>
+                    <button type="submit" name="SaveDiagnosa" class="btn btn-primary px-2"><span class="bx bx-save"></span> Simpan Hasil</button>
+                  </div>
+                  <?php echo form_close(); ?>
+                </div>
+              </div>
             </div>
-            <?php echo form_close(); ?>
           </div>
-        </div>
-      </div>
-    </div>
-    <!--end page wrapper -->
+          <!--end page wrapper -->
