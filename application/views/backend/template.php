@@ -60,7 +60,7 @@
 					<img src="<?=base_url('')?>assets/images/favicon/apple-icon-60x60.png" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
-					<h4 class="logo-text text-success">SPK</h4>
+					<h4 class="logo-text text-success">Deteksi Dini</h4>
 				</div>
 				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
 				</div>
