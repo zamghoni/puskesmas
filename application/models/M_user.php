@@ -52,7 +52,7 @@ class M_user extends CI_Model{
       'nama_lengkap' => ucwords($post['nama_lengkap']),
       'email' => $post['email'],
       'no_hp' => $post['no_hp'],
-      'password' => password_hash($post['no_hp'], PASSWORD_BCRYPT),
+      'password' => password_hash($post['password'], PASSWORD_BCRYPT),
       'role' => 1,
       'dibuat' => date('Y-m-d H:i:s'),
     ];

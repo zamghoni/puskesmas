@@ -36,8 +36,13 @@
                   <input type="number" name="no_hp" class="form-control" placeholder="8979xxxxxx" aria-label="hp_hp" aria-describedby="basic-addon1" required oninvalid="this.setCustomValidity('Masukkan No. HP anda')" oninput="setCustomValidity('')" >
                 </div>
                 <p></p>
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group mb-3">
+                  <input type="password" name="password" class="form-control" required oninvalid="this.setCustomValidity('Masukkan Password anda')" oninput="setCustomValidity('')" placeholder="Password">
+                </div>
+                <p></p>
                 <div class="text-center">
-                  <button type="submit" name="SaveRegs" class="btn btn-primary"><i class='bx bx-save'></i> Simpan</button>
+                  <button type="submit" name="SaveRegs" class="btn btn-primary"><i class='bx bx-save'></i> Daftar</button>
                 </div>
                 <?php echo form_close(); ?>
 
