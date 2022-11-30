@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 05:31 PM
+-- Generation Time: Nov 30, 2022 at 05:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -86,8 +86,6 @@ INSERT INTO `gejala` (`kd_gejala`, `nama_gejala`) VALUES
 ('G024', 'Mimisan'),
 ('G025', 'Detak Jantung Tak Beraturan'),
 ('G026', 'Mudah Marah'),
-('G027', 'Meningkatnya Napsu Makan'),
-('G028', 'Pusing Hingga Merasa Ingin Pingsan'),
 ('G029', 'Lemah Pada Otot-otot Wajah'),
 ('G030', 'Kesulitan Mengangkat Kedua Tangan'),
 ('G031', 'Kesulitan Berbicara'),
