@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 07:40 PM
+-- Generation Time: Nov 30, 2022 at 08:19 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -65,38 +65,6 @@ INSERT INTO `analisa_hasil` (`id`, `nama`, `jk`, `umur`, `alamat`, `kd_penyakit`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bencana`
---
-
-CREATE TABLE `bencana` (
-  `id_bencana` int(5) NOT NULL,
-  `id_operator` int(5) NOT NULL,
-  `jenis_bencana` varchar(150) NOT NULL,
-  `lokasi_kejadian` varchar(150) NOT NULL,
-  `id_kec` int(5) NOT NULL,
-  `tgl_kejadian` date NOT NULL,
-  `jam_kejadian` varchar(10) DEFAULT NULL,
-  `penyebab` text NOT NULL,
-  `kronologi` text NOT NULL,
-  `kerugian` text NOT NULL,
-  `terdampak` text NOT NULL,
-  `personil_lapangan` text NOT NULL,
-  `bantuan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bencana`
---
-
-INSERT INTO `bencana` (`id_bencana`, `id_operator`, `jenis_bencana`, `lokasi_kejadian`, `id_kec`, `tgl_kejadian`, `jam_kejadian`, `penyebab`, `kronologi`, `kerugian`, `terdampak`, `personil_lapangan`, `bantuan`) VALUES
-(1, 8, 'Tanah Longsor', 'Dukuh Padareka Rt 05 Rw 01 Desa Padasari', 7, '2021-01-15', '04:00 WIB', 'Hujan desar dalam waktu yang lama', 'Hujan deras yang terjadi diwilayah kecamatan jatinegara khususnya desa padasari yang berlangsung selama kurang lebih 2 jam menyebabkan halaman belakang rumah bapak solihin longsor', '', '1 rumah', 'Relawan desa padasari, perangkat desa padasari dan warga sekitar', ''),
-(2, 8, 'Banjir', 'Jatirawa', 13, '2022-04-12', '12.00', 'Hujan dersas ', 'Hujan deras dan angin yang terjadi di daerah jatirawa', '5 rumah terhanyut', '5 rumah ', '5 relawan dan 3 satgas', '-'),
-(3, 8, 'Banjir', 'Asas', 1, '2022-11-05', '13.00', 'Asas', 'Asas', '', '', '', ''),
-(4, 8, 'Kebakaran', 'Assas', 2, '2022-11-05', '19.00', 'Sasa', 'Sasa', '', '', '', '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `gejala`
 --
 
@@ -131,40 +99,6 @@ INSERT INTO `gejala` (`kd_gejala`, `nama_gejala`) VALUES
 ('G019', 'Bau nafas tidak sedap'),
 ('G020', 'Darah dan lendir dalam kotoran'),
 ('G021', 'Tidak buang air besar lebih dari 3 hari');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pegawai`
---
-
-CREATE TABLE `pegawai` (
-  `id_pegawai` int(5) NOT NULL,
-  `nama_pegawai` varchar(100) NOT NULL,
-  `tgl_lahir` date NOT NULL,
-  `alamat_pegawai` text NOT NULL,
-  `jabatan_pegawai` varchar(100) NOT NULL,
-  `tahun_masuk` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pegawai`
---
-
-INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `tgl_lahir`, `alamat_pegawai`, `jabatan_pegawai`, `tahun_masuk`) VALUES
-(1, 'Elliya Hidaya, S.IP., M.M', '2022-10-15', 'Tegal', 'Kepala Pelaksana', '2000'),
-(2, 'Drs. Mohammad Syaefudin', '2022-10-15', 'Tegal', 'Sekretaris', '2000'),
-(3, 'Widi Harsono, S.Pi., M.Si', '2022-10-15', 'Tegal', 'Sub Bagian Perencanaan & Keuangan', '2002'),
-(4, 'Orbanowati Susi Juharini, S.E., M.M', '2022-10-15', 'Tegal', 'Sub Bagian Umum & Kepegawaian', '2002'),
-(5, 'Djuliono, S.Sos', '2022-10-15', 'Tegal', 'Bidang Pencegahan & Kesiapsiagaan', '2002'),
-(6, 'Danang Wahyu Pribadi, S.T., M.T', '2022-10-15', 'Tegal', 'Bidang Kedaruratan & Logistik', '2003'),
-(7, 'Jeruri, S.T., M.M', '2022-10-15', 'Tegal', 'Bidang Rehabilitasi & Rekonstruksi', '2000'),
-(8, 'Fajri Hidayati, S.M', '2022-10-15', 'Tegal', 'Sub Bidang Pencegahan', '2000'),
-(9, 'Drs. Juli', '2022-10-15', 'Tegal', 'Sub Bidang Kesiapsiagaan', '2000'),
-(10, 'Djohanto, S.Ip', '2022-10-15', 'Tegal', 'Sub Bidang Penyelamatan, Evakuasi & Penanganan Pengungsian', '2000'),
-(11, 'Drs. Yulian Tri Handoko', '2022-10-15', 'Tegal', 'Sub Bidang Sarana Prasarana & Logistik', '2000'),
-(12, 'Suharto, S.St', '2022-10-15', 'Tegal', 'Sub Bidang Rehabilitas', '2000'),
-(13, 'Zainal Arifin, S.Sos', '2022-10-15', 'Tegal', 'Sub Bidang Rekonstruksi', '2000');
 
 -- --------------------------------------------------------
 
@@ -289,7 +223,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama_lengkap`, `email`, `no_hp`, `password`, `role`, `foto`, `dibuat`, `diubah`) VALUES
 (8, 'Admin', 'admin@gmail.com', '081563916752', '$2y$10$ke0.y4qcjGJ5WEa.vxxFdOr7XZUO41TwMhjTjnsQaLGK4aJr3BvEe', 0, 'Foto_User221121-6a62f90543.png', '2022-10-15 05:24:55', '2022-11-21 05:41:41'),
 (9, 'M. Oki Mualimin', 'pasien1@gmail.com', '085226351703', '$2y$10$Ne8wIMZwO9OzMSHXfldRUe0g7g.nQQW6M8uStwdPDg/OI4aorxG8a', 1, 'Foto_User221105-611603f6bc.png', '2022-10-15 05:25:33', '2022-11-23 03:54:17'),
-(11, 'Pasien 2', 'pasien2@gmail.com', '123', '$2y$10$IAjZEmL8MvInrsHqwTXB8u1/zPb4fnRMulOyfB8Trxr.7orSIdwkG', 1, NULL, '2022-11-01 06:02:21', '2022-11-28 14:07:11');
+(11, 'Pasien 2', 'pasien2@gmail.com', '123', '$2y$10$IAjZEmL8MvInrsHqwTXB8u1/zPb4fnRMulOyfB8Trxr.7orSIdwkG', 1, NULL, '2022-11-01 06:02:21', '2022-11-28 14:07:11'),
+(16, 'Metamorfosa', 'agus@gmail.com', '8979156600', '$2y$10$sv6Jq6IHEJlbmoOJ/hPO1edEd8iLU6DXzRsYfCSKytyqU076fVqKu', 1, NULL, '2022-11-30 02:31:16', NULL),
+(17, 'Coba 1', 'cobaca@gmail.com', '989898', '$2y$10$Dn0e2A6PInmKaZI4MmE13OHJZ9mvGm3P0y38gvBXKKDFGx4AjM.ri', 1, NULL, '2022-11-30 03:10:23', NULL);
 
 --
 -- Indexes for dumped tables
@@ -302,22 +238,10 @@ ALTER TABLE `analisa_hasil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bencana`
---
-ALTER TABLE `bencana`
-  ADD PRIMARY KEY (`id_bencana`);
-
---
 -- Indexes for table `gejala`
 --
 ALTER TABLE `gejala`
   ADD PRIMARY KEY (`kd_gejala`);
-
---
--- Indexes for table `pegawai`
---
-ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`id_pegawai`);
 
 --
 -- Indexes for table `penyakit`
@@ -357,19 +281,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `analisa_hasil`
 --
 ALTER TABLE `analisa_hasil`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=620;
-
---
--- AUTO_INCREMENT for table `bencana`
---
-ALTER TABLE `bencana`
-  MODIFY `id_bencana` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `pegawai`
---
-ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=622;
 
 --
 -- AUTO_INCREMENT for table `relasi`
@@ -381,19 +293,19 @@ ALTER TABLE `relasi`
 -- AUTO_INCREMENT for table `tmp_gejala`
 --
 ALTER TABLE `tmp_gejala`
-  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tmp_pasien`
 --
 ALTER TABLE `tmp_pasien`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
