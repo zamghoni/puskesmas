@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 05:33 PM
+-- Generation Time: Dec 28, 2022 at 04:49 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -43,7 +43,13 @@ CREATE TABLE `analisa_hasil` (
 --
 
 INSERT INTO `analisa_hasil` (`id`, `nama`, `jk`, `umur`, `alamat`, `kd_penyakit`, `tanggal`, `email`) VALUES
-(1, 'M. Oki Mualimin', 'Laki-laki', '29', 'Cilincing', 'P005', '2022-11-30 23:25:27', '');
+(1, 'M. Oki Mualimin', 'Laki-laki', '29', 'Cilincing', 'P005', '2022-11-30 23:25:27', ''),
+(2, 'Pasien 2', 'Wanita', '26', 'Cilincing', 'P001', '2022-12-02 19:44:53', ''),
+(3, 'Pasien 2', 'Wanita', '26', 'Cilincing', 'P005', '2022-12-02 19:44:53', ''),
+(4, 'Coba 1', 'Laki-laki', '30', 'Cilincing', 'P002', '2022-12-02 19:46:49', ''),
+(5, 'Coba 1', 'Laki-laki', '30', 'Cilincing', 'P003', '2022-12-02 19:46:49', ''),
+(6, 'Coba 1', 'Laki-laki', '30', 'Cilincing', 'P004', '2022-12-02 19:46:49', ''),
+(7, 'M. Oki Mualimin', 'Wanita', '45', 'Lebaksiu', 'P005', '2022-12-10 07:45:12', '');
 
 -- --------------------------------------------------------
 
@@ -289,7 +295,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `analisa_hasil`
 --
 ALTER TABLE `analisa_hasil`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `relasi`
@@ -301,13 +307,13 @@ ALTER TABLE `relasi`
 -- AUTO_INCREMENT for table `tmp_gejala`
 --
 ALTER TABLE `tmp_gejala`
-  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_temp_gjl` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tmp_pasien`
 --
 ALTER TABLE `tmp_pasien`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
